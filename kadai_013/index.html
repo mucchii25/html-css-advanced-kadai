@@ -1,56 +1,164 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Organic Cafe</title>
-    <meta charset="UTF-8" />
-    <meta name="description" content="自家焙煎のコーヒーがお家で楽しめるOrganic Cafe"/>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- ヘッダー -->
-    <header>
-      <!-- ロゴ -->
-      <a href="index.html" id="logo"><img src="images/logo.png" alt="トップページに戻る"/></a>
+/* PC、スマホ共通スタイル */
+body {
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial,
+    sans-serif;
+}
 
-      <!-- PC用ナビゲーション -->
-      <nav id="nav-pc">
-        <a href="index.html#concept">CONCEPT</a>
-        <a href="index.html#product">PRODUCT</a>
-        <a href="index.html#contact">CONTACT</a>
-      </nav>
-      
-        
-      <img id="menu-sp" src="./images/button-menu.png" alt="ナビゲーションを開く" onclick="document.getElementById('nav-sp').style.display = 'block'">
+p {
+  font-size: 15px;
+}
 
-       <!-- SP用ナビゲーション -->
-    <nav id="nav-sp">
-      
-        <img id="close" src="./images/button-close.png" alt="ナビゲーションを閉じる" onclick="document.getElementById('nav-sp').style.display = 'none'">
-        <a id="logo-sp" href="index.html" onclick="document.getElementById('nav-sp').style.display = 'none'"><img src="./images/logo-sp.png" alt="トップページに戻る"></a>
-      <ul>
-      
-       <li><a class="menu" href="index.html#consept" onclick="document.getElementById('nav-sp').style.display = 'none'">CONCEPT</a></li>
 
-       <li><a class="menu" href="index.html#product" onclick="document.getElementById('nav-sp').style.display = 'none'">PRODUCT</a></li>
+#main-visual>img {
+  width: 100%;
+}
 
-       <li><a class="menu" href="index.html#contact" onclick="document.getElementById('nav-sp').style.display = 'none'">CONTACT</a></li>
-      </ul>
+/*================
+PC用のスタイル 
+=================*/
+@media screen and (min-width: 768px) {
+  /* 横幅設定 */
+  body {
 
-     </nav>
-     
-    </header>
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto 0 auto;
 
-    <main>
-      <article>
-        <!-- メインビジュアル -->
-        <section id="main-visual">
-          <div id="main-message">
-            <h1>Organic Cafe</h1>
-            <p>自家焙煎コーヒーが買えるお店</p>
-          </div>
-          <img src="images/main-image.jpg" alt="コーヒーをハンドドリップで淹れる画像"/>
-        </section>
-      </article>
-    </main>
-  </body>
-</html>
+  }
+
+  #menu-sp	{
+    display: none;
+  }
+
+  #nav-sp {
+    display: none;
+    }
+
+
+  /* ヘッダー */
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ナビゲーションのレイアウト */
+  #nav-pc {
+    text-align: right;
+    font-size: 14px;
+    padding-top: 15px;
+  }
+
+  /* ナビゲーションのリンクの装飾設定 */
+  #nav-pc>a {
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  #nav-pc>a:link {
+    color: #0d0d0d;
+  }
+
+  #nav-pc>a:visited {
+    color: #0d0d0d;
+  }
+
+  #nav-pc>a:hover {
+    color: #0d0d0d;
+    text-decoration: underline;
+  }
+
+  #nav-pc>a:active {
+    color: #0d0d0d;
+  }
+
+}
+
+/*================
+SP用のスタイル 
+=================*/
+@media screen and (max-width: 767px) {
+
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+
+/* PCのナビゲーションを非表示に */
+  #nav-pc {
+    display: none;
+  }
+
+
+/* ハンバーガーメニュー */
+  #menu-sp {
+    float: right;
+    padding: 0;
+  }
+
+/* スマホ用ナビゲーション */
+  #nav-sp {
+    background-color: #ce933e;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 100;
+  }
+
+  #nav-sp>ul {
+    padding-left: 0;
+  }
+  
+  #nav-sp>li {
+    list-style: none;
+  }
+
+  /* xボタン */
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  /* 	ナビゲーションメニュー用ロゴ */
+  #logo-sp {
+    margin: 80px 0px 30px 20px;
+  }
+
+  #nav-sp>a {
+    display: block;
+  }
+
+  #nav-sp a:link {
+
+    color: #ffffff;
+  }
+
+  #nav-sp  a:visited {
+    color: #ffffff;
+  }
+
+
+  #nav-sp a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  #nav-sp  a:active {
+    color: #ffffff;
+  }
+
+  #nav-sp  .menu {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    margin: 0px 20px 0 20px;
+    height: 44px;
+    font-size: 16px;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+
+  }
